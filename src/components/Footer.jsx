@@ -1,3 +1,5 @@
+import { LINKEDIN_URL } from "../utils/constants";
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -5,7 +7,11 @@ const Footer = () => {
     <div className="w-full flex items-center justify-center gap-[2px] p-[18px] mt-[30px] bg-[#ffffff] shadow-[-2px_7px_5px_-6px_#0000009c]">
       Created By
       <span className="text-xl">❤️</span>
-      <a className="text-purple-900 font-bold" href="/" target="_blank">
+      <a
+        className="text-purple-900 font-bold"
+        href={LINKEDIN_URL}
+        target="_blank"
+      >
         Mayank Raj Parmar
       </a>
       <div>
