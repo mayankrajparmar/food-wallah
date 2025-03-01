@@ -4,13 +4,14 @@ import { MdStarRate } from "react-icons/md";
 import RestaurantMenuCategory from "./RestaurantMenuCategory";
 import { CDN_URL } from "../utils/constants";
 import useRestaurantMenu from "../utils/hooks/useRestaurantMenu";
+import { RestaurantMenuShimmer } from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resID } = useParams();
   const menuData = useRestaurantMenu(resID);
   const [showIndex, setShowIndex] = useState(0);
 
-  if (menuData === null) return <h1>Loading...</h1>;
+  if (menuData === null) return <RestaurantMenuShimmer />;
 
   const {
     name,

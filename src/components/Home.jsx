@@ -4,6 +4,7 @@ import RestaurantCard, {
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useRestaurant from "../utils/hooks/useRestaurant";
+import { RestaurantShimmer } from "./Shimmer";
 
 const Home = () => {
   const [searchText, setSearchText] = useState("");
@@ -41,7 +42,7 @@ const Home = () => {
 
   const RestaurantCardDiscounted = withDiscountLable(RestaurantCard);
 
-  if (originalData.length == 0) return <h1>Loading...</h1>;
+  if (originalData.length == 0) return <RestaurantShimmer />;
   return (
     <div className="w-[80%] mx-auto">
       <div className="flex flex-col md:flex-row items-center gap-8 justify-center">
