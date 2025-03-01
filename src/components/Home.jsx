@@ -44,26 +44,26 @@ const Home = () => {
   if (originalData.length == 0) return <h1>Loading...</h1>;
   return (
     <div className="w-[80%] mx-auto">
-      <div className="flex  items-center gap-8 justify-center">
+      <div className="flex flex-col md:flex-row items-center gap-8 justify-center">
         <div className="flex">
           <input
             type="text"
             value={searchText}
             onChange={handleSearchChange}
             placeholder="Search your restaurant"
-            className="w-[95%] py-[6px] px-[10px] text-[1.2rem] text-[#3d3d3d] bg-transparent border-1 border-[#818181] border-r-0 border-[1px] rounded-l-[8px] outline-none focus:border-[#E46F20] transition-all"
+            className="w-[95%] py-[6px] px-[10px] text-[1.2rem] text-[#3d3d3d] bg-transparent border-1 border-[#818181] border-r-0 border-[1px] rounded-l-[8px] outline-none focus:border-[#ff4800] transition-all"
           />
           <button
             onClick={() => {
               setData(handleSearch());
             }}
-            className="py-[7px] px-[10px] text-[1.2rem] text-[#fff] bg-[#E46F20] rounded-r-[8px] border-none hover:bg-[#016034]"
+            className="py-[7px] px-[10px] text-[1.2rem] text-[#fff] bg-[#ff4800] rounded-r-[8px] border-none hover:bg-[#016034]"
           >
             search
           </button>
         </div>
         <button
-          className="py-[7px] px-[10px] text-[1.2rem] text-[#fff] bg-[#E46F20] rounded-[8px] border-none hover:bg-[#016034]"
+          className="py-[7px] px-[10px] text-[1.2rem] text-[#fff] bg-[#ff4800] rounded-[8px] border-none hover:bg-[#016034]"
           onClick={() => {
             setTopFlag(!topFlag);
           }}
@@ -75,7 +75,7 @@ const Home = () => {
           value={loggedInUser}
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter Your Name"
-          className="w-[20%] py-[6px] px-[10px] text-[1.2rem] text-[#3d3d3d] bg-transparent border-1 border-[#818181]  rounded-[8px] outline-none focus:border-[#E46F20] transition-all"
+          className="w-[20%] py-[6px] px-[10px] text-[1.2rem] text-[#3d3d3d] bg-transparent border-1 border-[#818181]  rounded-[8px] outline-none focus:border-[#ff4800] transition-all"
         /> */}
       </div>
 

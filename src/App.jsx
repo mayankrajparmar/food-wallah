@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/restaurant/:resID",
+        element: <RestaurantMenu />,
       },
     ],
   },

@@ -18,9 +18,9 @@ const Footer = () => {
         <span className="mx-[5px] text-[20px]">&copy;</span>
         {year}
       </div>
-      <strong className="pl-[5px]">
-        Food <span className="text-[#E46F20]">Wallah</span>
-      </strong>
+      <p className="font-bold pl-[5px]">
+        Food <span className="text-[#ff4800]">Wallah</span>
+      </p>
     </div>
   );
 };
