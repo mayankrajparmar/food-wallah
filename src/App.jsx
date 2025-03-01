@@ -1,9 +1,30 @@
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-green-500">Hello World, Welcome to Food Wallah</h1>
+    <div className="w-full flex flex-col justify-between items-center mt-[120px] min-h-[calc(100vh-120px)]">
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
 }
+
+// Children Routes
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 export default App;
