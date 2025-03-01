@@ -5,3 +5,6 @@ export const RESTAURANT_API =
 
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+export const RESTAURANT_MENU_API =
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9953514&lng=77.65883749999999&restaurantId=";
