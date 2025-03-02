@@ -1,32 +1,33 @@
 import { MdStarRate } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
-// import { addItem, removeItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../../utils/cartSlice";
 import { CDN_URL } from "../../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
 
 const RestaurantMenuItemList = ({ items }) => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // Subscribing to the cart
-  //   const cart = useSelector((store) => store.cart.cartItems);
-  //   console.log("cartttt", cart);
+  const cart = useSelector((store) => store.cart.cartItems);
+  // console.log("cartttt", cart);
 
-  //   const cartItems = Object.values(cart);
-  //   console.log("cartIteehehms", cartItems);
+  const cartItems = Object.values(cart);
+  // console.log("cartIteehehms", cartItems);
 
-  //   const handleAddToCart = (item) => {
-  //     dispatch(addItem(item));
-  //   };
+  const handleAddToCart = (item) => {
+    dispatch(addItem(item));
+  };
 
-  //   const handleRemoveFromCart = (item) => {
-  //     dispatch(removeItem(item));
-  //   };
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeItem(item));
+  };
   return (
     <div>
       {items.map((item) => {
         const { id, name, price, defaultPrice, ratings, imageId, description } =
           item.card.info;
         const avgRatingString = ratings?.aggregatedRating?.rating || 3.5;
-        // const cartItem = cartItems.find((cartItem) => cartItem.item.id === id);
+        const cartItem = cartItems.find((cartItem) => cartItem.item.id === id);
 
         return (
           <div
@@ -64,7 +65,7 @@ const RestaurantMenuItemList = ({ items }) => {
                 alt={name}
               />
 
-              {/* {cartItem ? (
+              {cartItem ? (
                 <div className="w-[100px] text-green-600 bg-white font-semibold rounded-md text-[1.2rem] relative bottom-[15px] flex items-center justify-between">
                   <button
                     className="rounded-l-md px-[12px] py-[5px] cursor-pointer border-none hover:bg-gray-300 hover:text-green-800 transition-all 0.3s"
@@ -87,13 +88,7 @@ const RestaurantMenuItemList = ({ items }) => {
                 >
                   ADD
                 </button>
-              )} */}
-              <button
-                className="w-[100px] text-green-600 bg-white font-semibold rounded-md text-[1.2rem] px-[30px] py-[5px] cursor-pointer border-none relative bottom-[15px] hover:bg-gray-300 hover:text-green-800 transition-all 0.3s"
-                // onClick={() => handleAddToCart(item.card.info)}
-              >
-                ADD
-              </button>
+              )}
             </div>
           </div>
         );
