@@ -1,3 +1,4 @@
+import { MdStarRate } from "react-icons/md";
 import { CDN_URL } from "../../utils/constants";
 
 const RestaurantCard = ({
@@ -5,7 +6,9 @@ const RestaurantCard = ({
   name,
   avgRating,
   cuisines,
+  costForTwo,
   sla,
+  areaName,
 }) => {
   return (
     <div className="w-[16.5rem] shadow-md cursor-pointer p-4 rounded-xl  ">
@@ -14,16 +17,32 @@ const RestaurantCard = ({
         alt="restaurant-image"
         style={{ width: "100%", height: "200px", borderRadius: "16px" }}
       />
-      <h3 className="mt-2">
+      <h3 className="mt-2 font-semibold">
         {name.length > 26 ? name.substring(0, 22) + "..." : name}
       </h3>
-      <p>{avgRating} Stars</p>
       <p>
         {cuisines.join(", ").length > 25
           ? cuisines.join(", ").substring(0, 28) + "..."
           : cuisines.join(", ")}
       </p>
-      <p>{sla.slaString}</p>
+      <div className="flex items-center gap-4 font-medium text-gray-700">
+        <h4 className="flex items-center">
+          <MdStarRate
+            className="text-white w-[18px] h-[18px] rounded-[50%] p-[2px] mr-[3px]"
+            style={
+              avgRating > 4.0
+                ? { backgroundColor: "green" }
+                : { backgroundColor: "red" }
+            }
+          />
+          <span>{avgRating}</span>
+        </h4>
+        <h4 className="text-xs">{costForTwo}</h4>
+        <p className="text-xs">{sla.slaString}</p>
+      </div>
+      <p className="text-[#828080] font-[500px] font-[Gilroy, sans-serif] text-[15px]">
+        {areaName}
+      </p>
     </div>
   );
 };
